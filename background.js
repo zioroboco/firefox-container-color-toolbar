@@ -17,15 +17,14 @@ class containersTheme {
       return this.isUnpaintedTheme(tab.cookieStoreId);
     });
     const containers = await this.getContainers();
-    if (hasUnpainted) {
-      this.resetTheme();
-    }
     activeTabs.forEach((tab) => {
       const cookieStoreId = tab.cookieStoreId;
       if (!this.isUnpaintedTheme(cookieStoreId)) {
-        this.changeTheme(cookieStoreId,
+        this.changeThemeContainer(cookieStoreId,
           tab.windowId,
           containers.get(cookieStoreId));
+      } else {
+      this.changeThemeDefault(tab.windowId);
       }
     });
   }
@@ -44,22 +43,31 @@ class containersTheme {
             currentCookieStore == "firefox-private");
   }
 
-  resetTheme() {
-    // Because of the following, we loop through all active windows after a reset
-    // this means when we have unpained tabs the browser flickers
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=1401691
-    browser.theme.reset();
+  async changeThemeDefault(windowId) {
+    return browser.theme.update(windowId, {
+      images: {
+        headerURL: "",
+      },
+      colors: {
+        accentcolor: "#0c0c0d",
+        textcolor: "#fff",
+        toolbar: "#38383d",
+        toolbar_text: "#f9f9fa",
+      }
+    });
   }
 
-  async changeTheme(currentCookieStore, windowId, container) {
+  async changeThemeContainer(currentCookieStore, windowId, container) {
     this.cachedCookieStore = currentCookieStore;
     return browser.theme.update(windowId, {
       images: {
         headerURL: "",
       },
       colors: {
-        accentcolor: container.colorCode,
-        textcolor: "#111",
+        accentcolor: "#0c0c0d",
+        textcolor: "#fff",
+        toolbar: container.colorCode,
+        toolbar_text: "#111",
       }
     });
   }
