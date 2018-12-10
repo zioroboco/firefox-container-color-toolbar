@@ -1,19 +1,19 @@
 {
-  "name": "container-color-theme",
-  "version": "1.1",
-  "description": "Changes the current browser window theme to match the colour of the active tab.",
+  "name": "container-color-toolbar",
+  "version": "0.1",
+  "description": "Toolbar color following container color",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "web-ext build -i assets/* --overwrite-dest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/CharoSW/containers-theme.git"
+    "url": "git+https://gitlab.com/n0rad/firefox-container-color-toolbar.git"
   },
-  "author": "Sean Hugo",
+  "author": "n0rad",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://gitlab.com/CharoSW/containers-theme/issues"
+    "url": "https://gitlab.com/n0rad/firefox-container-color-toolbar/issues"
   },
-  "homepage": "https://gitlab.com/CharoSW/containers-theme#readme"
+  "homepage": "https://gitlab.com/n0rad/firefox-container-color-toolbar#readme"
 }

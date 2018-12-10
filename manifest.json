@@ -1,13 +1,15 @@
 {
+  "manifest_version": 2,
+  "name": "Container Color Toolbar",
+  "version": "0.1",
+  "description": "Black theme toolbar following container color",
   "background": {
     "scripts": ["background.js"]
   },
   "permissions": [
     "cookies",
-    "storage",
     "theme",
     "contextualIdentities",
-    "<all_urls>",
     "tabs"
   ],
   "applications": {
@@ -17,9 +19,5 @@
   },
   "icons": {
     "96": "img/containers.svg"
-  },
-  "description": "Change theme colour based on your container color",
-  "manifest_version": 2,
-  "name": "Container Color Theme",
-  "version": "1.1"
+  }
 }
