@@ -47,8 +47,8 @@ class containersTheme {
         headerURL: "",
       },
       colors: {
-        accentcolor: "#333",
-        textcolor: "#eee",
+        frame: "#333",
+        tab_background_text: "#eee",
         toolbar: toolbarColor,
         toolbar_text: "#eee",
         toolbar_field: "#353535",
