@@ -34,7 +34,7 @@ class containersTheme {
   }
 
   async updateTabContainerTheme(tabId, windowId) {
-    var toolbarColor = "#515151"
+    var toolbarColor = "#353535" // match the navbar text area
     var tab = await browser.tabs.get(tabId);
 
     if (!this.isUnpaintedTheme(tab.cookieStoreId)) {
